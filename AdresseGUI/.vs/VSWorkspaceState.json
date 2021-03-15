@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\client\\src"
   ],
-  "SelectedNode": "\\AdresseGUI.sln",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }
