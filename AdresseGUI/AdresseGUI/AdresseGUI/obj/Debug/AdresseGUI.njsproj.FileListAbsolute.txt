@@ -1,0 +1,3 @@
+C:\Users\jeppe\OneDrive - Professionshøjskolen UCN\4. Semester\JavaShits\JSSandbox\AdresseGUI\AdresseGUI\AdresseGUI\obj\Debug\AdresseGUI.njsprojAssemblyReference.cache
+C:\Users\jeppe\OneDrive - Professionshøjskolen UCN\4. Semester\JavaShits\JSSandbox\AdresseGUI\AdresseGUI\AdresseGUI\obj\Debug\AdresseGUI.njsproj.CoreCompileInputs.cache
+C:\Users\jeppe\OneDrive - Professionshøjskolen UCN\4. Semester\JavaShits\JSSandbox\AdresseGUI\AdresseGUI\AdresseGUI\bin\Microsoft.NodejsTools.WebRole.dll
