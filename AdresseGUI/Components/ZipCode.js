@@ -1,26 +1,24 @@
 const ZipCode = () => {
-    const lookUpZipCode = (zipcode) => {
-        let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-        let xhr = new XMLHttpRequest();
-        let uri = `https://dawa.aws.dk/postnumre/${zipcode}`;
 
-        xhr.open("GET", uri);
-        xhr.setRequestHeader("Accept", "application/json");
-        await xhr.onreadystatechange;
-        let response = JSON.parse(xhr.responseText);
-        document.getElementById("cityName").value = response["navn"];
+    const performLookup = (zipcode, callback) => {
+        fetch(`http://localhost:9000/zip?zipcode=${zipcode}`)
+            .then(res => res.json())
+                .then(callback);
     };
 
-    const onClick = () => {
-        let zipCodeFromInput = document.getElementById("myZip").value;
-        return lookUpZipCode(zipCodeFromInput);
+    const readInputAndPassRequest = () => {
+        let zipcode = document.getElementById("zipCodeInput");
+        performLookup(zipcode, (result) => {
+            document.getElementById("resultParagraph").text = result.city;
+        });
     }
 
     return (
         <div>
-            <input id='myZip' type='number' placeholder='Indtast postnummer her' />
-            <p id='cityName' value='' />
-            <button type='submit' onClick='onClick' value='Find bynavn' />
+            <p id="resultParagraph"></p>
+                <label>Indtast postnummer og du vil på magisk vis, få et bynavn frem :O</label>
+                <input id="zipCodeInput" type="number"/>
+                <button onClick="readInputAndPassRequest"/>
         </div>
     )
 }
