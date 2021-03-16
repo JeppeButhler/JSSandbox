@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ZipCode from '../Components/ZipCode.js'
+import ZipCode from './Components/ZipCode.js'
 
 function App() {
   return (
