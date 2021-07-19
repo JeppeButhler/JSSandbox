@@ -35,19 +35,20 @@ async function getCityData() {
         };
 
         fetch(uri, requestOptions)
-            .then(data => {
-                if (data.ok) {
-                    return data;
+            .then(res => {
+                if(res.ok) {
+                    return res.json();
                 }
                 else if (myZip.length != 4) {
                     console.error(`A danish zipcode is 4 digits, not ${myZip.length}.`);
                 }
                 else {
-                    console.error(`An error ocurred, statuscode: ${data.status}.`);
+                    console.error(`An error ocurred, statuscode: ${res.status}.`)
                 }
             })
-            .then(console.log("The city with zipcode " + myZip + " is: " + data.navn))
-            .then(askAgain())
+            .then(data => {
+                    console.log("The city with zipcode " + myZip + " is: " + data.navn);
+            })
             .catch(err => {
                 console.error(err);
             })
