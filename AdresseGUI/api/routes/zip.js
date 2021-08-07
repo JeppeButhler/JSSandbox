@@ -1,11 +1,34 @@
 var express = require("express");
 var router = express.Router();
 const https = require('https');
-const retus = require("retus");
 
 
 const getCityNameFromZipCode = (zipcode) => {
     let uri = `https://api.dataforsyningen.dk/postnumre/${zipcode}`;
+    let requestOptions = {
+        method: "GET",
+        responseType: "json",
+        mode: 'cors'
+    };
+
+    fetch(uri, requestOptions)
+        .then(data => {
+            if(data.ok) {
+                return data.json();
+            }
+        }) 
+        .then(data => {
+            return data.navn;
+        })
+        .catch(err => {
+            console.error(err);
+
+        });
+    };
+
+
+
+
     let httpResponse = retus(uri, {
         method: "GET",
         responseType: "json",
