@@ -1,29 +1,38 @@
-const ZipCode = () => {
+import React from 'react';
+
+export default function ZipCode() {
     const lookUpZipCode = (zipcode) => {
-        //let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-        let xhr = new XMLHttpRequest();
-        let uri = `https://dawa.aws.dk/postnumre/${zipcode}`;
+        let uri = `https://api.dataforsyningen.dk/postnumre/${zipcode}`;
+        const requestOptions = {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            mode: 'cors'
+        };
 
-        xhr.open("GET", uri);
-        xhr.setRequestHeader("Accept", "application/json");
-        await xhr.onreadystatechange;
-        let response = JSON.parse(xhr.responseText);
-        document.getElementById("cityName").value = response["navn"];
+        fetch(uri, requestOptions)
+            .then(res => {
+                if (res.ok) {
+                    return res.json();
+                }
+            })
+            .then(data => {
+                return data.navn;
+            })
+            .catch(err => {
+                alert("Something went wrong.")
+            });
+
+        const onClick = () => {
+            let zipCodeFromInput = document.getElementById("myZip").value;
+            return lookUpZipCode(zipCodeFromInput);
+        };
+
+        return (
+            <div>
+                <input id='myZip' type='number' placeholder='Enter zipcode here' />
+                <button type='submit' onClick='onClick' value='Lookup' />
+                <p id='cityName' value='' />
+            </div>
+        )
     };
-
-    const onClick = () => {
-        let zipCodeFromInput = document.getElementById("myZip").value;
-        return lookUpZipCode(zipCodeFromInput);
-    }
-        
-    return (
-        
-        <div>
-            <input id='myZip' type='number' placeholder='Indtast postnummer her'/>
-            <p id='cityName' value=''/>
-            <button type='submit' onClick='onClick' value='Find bynavn'/>
-        </div>
-    )
-}
-
-export default ZipCode
+};

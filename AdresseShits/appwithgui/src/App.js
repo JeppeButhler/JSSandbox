@@ -1,16 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ZipCode from './Components/ZipCode.js';
+import ZipCode from './Components/ZipCode';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ZipCode>
-          {/*Edit <code>src/App.js</code> and save to reload.-->*/}
-        </ZipCode>
+        <ZipCode/>
         <a
           className="App-link"
           href="https://reactjs.org"
