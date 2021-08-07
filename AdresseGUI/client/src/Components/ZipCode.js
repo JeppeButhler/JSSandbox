@@ -19,7 +19,7 @@ const ZipCode = () => {
     return (
         <div>
             <p id="resultParagraph"></p>
-                <label>Indtast postnummer og du vil på magisk vis, få et bynavn frem :O</label>
+                <label>Enter zipcode to lookup.</label>
                 <input id="zipCodeInput" type="number"/>
                 <button onClick={readInputAndPassRequest}/>
         </div>

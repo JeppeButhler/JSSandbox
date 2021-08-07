@@ -1,15 +1,15 @@
 var express = require("express");
 var router = express.Router();
 const https = require('https');
-let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const retus = require("retus");
 
 
 const getCityNameFromZipCode = (zipcode) => {
-    let uri = `https://dawa.aws.dk/postnumre/${zipcode}`;
+    let uri = `https://api.dataforsyningen.dk/postnumre/${zipcode}`;
     let httpResponse = retus(uri, {
-        method: "get",
-        responseType: "json"
+        method: "GET",
+        responseType: "json",
+        mode: 'cors'
     });
     let body = httpResponse.body;
     return body;
