@@ -26,19 +26,6 @@ const getCityNameFromZipCode = (zipcode) => {
         });
     };
 
-
-
-
-    let httpResponse = retus(uri, {
-        method: "GET",
-        responseType: "json",
-        mode: 'cors'
-    });
-    let body = httpResponse.body;
-    return body;
-};
-
-
 router.get("/", function(req, res, next) {
 
     let zipcode = req.query.zipcode;
