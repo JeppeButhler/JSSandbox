@@ -14,19 +14,23 @@ const ZipCode = () => {
                 return data.json();
         }}) 
         .then(jsonData => {
-            console.log(jsonData.navn);
             return jsonData.navn;
         })
+        .then(navn => {
+            document.getElementById("resultParagraph").innerText = navn;
+        })
         .catch(err => {
-            console.error(err);
+            document.getElementById("resultParagraph").innerText = "En fejl opstod. Prøv igen.";
         });
     };
 
     const readInputAndPassRequest = () => {
         let zipcode = document.getElementById("zipCodeInput").value;
-        performLookup(zipcode, (result) => {
-            document.getElementById("resultParagraph").innerText = result;
-        });
+        if(zipcode >= 1000 && zipcode < 10000) {
+            performLookup(zipcode);
+        } else {
+            document.getElementById("resultParagraph").innerText = "Et postnummer indeholder fire cifre."
+        }
     }
 
     return (
