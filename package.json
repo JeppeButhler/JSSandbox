@@ -1,0 +1,15 @@
+{
+  "name": "jssandbox-1",
+  "version": "1.0.0",
+  "description": "Tiny projects to explore the JavaScript language.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeppeButhler/JSSandbox.git"
+  },
+  "author": "Jeppe Buthler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeppeButhler/JSSandbox/issues"
+  },
+  "homepage": "https://github.com/JeppeButhler/JSSandbox#readme"
+}
