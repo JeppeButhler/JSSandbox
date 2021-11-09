@@ -8,7 +8,7 @@ async function getCityData()
     let myZip = prompt('Enter the zipcode you want the name of and press enter. \n');
     let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     let xhr = new XMLHttpRequest();
-    let uri = `https://dawa.aws.dk/postnumre/${myZip}`;
+    let uri = `https://api.dataforsyningen.dk/postnumre/${myZip}`;
     
     xhr.open("GET", uri);
     xhr.setRequestHeader("Accept", "application/json");

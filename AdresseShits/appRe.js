@@ -13,7 +13,7 @@ async function getCityData() {
 
         let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         let xhr = new XMLHttpRequest();
-        let uri = `https://dawa.aws.dk/postnumre/${myZip}`;
+        let uri = `https://api.dataforsyningen.dk/postnumre/${myZip}`;
 
         xhr.open("GET", uri);
         xhr.setRequestHeader("Accept", "application/json");
