@@ -1,0 +1,15 @@
+{
+  "name": "adresseshits",
+  "version": "0.0.1",
+  "description": "Simple command line address (DK) lookup stuff.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/JeppeButhler/JSSandbox"
+  },
+  "author": "Jeppe Buthler",
+  "license": "MIT"
+}
